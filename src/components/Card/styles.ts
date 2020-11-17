@@ -17,12 +17,12 @@ export const Container = styled.div`
 `;
 
 export const Image = styled.div<{ url: string }>`
-  width: 93px;
-  height: 93px;
+  width: 100px;
+  height: 100px;
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-image: url(${(props) => props.url});
 `;
 
@@ -39,4 +39,14 @@ export const Name = styled.p`
   text-align: center;
 
   color: #ffffff;
+`;
+
+export const Type = styled.div`
+  width: 100%;
+  height: 34px;
+
+  background: #ffffff;
+  border-radius: 15px;
+
+  text-align: center;
 `;

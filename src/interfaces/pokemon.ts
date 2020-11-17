@@ -12,7 +12,7 @@ export interface IPokemonPayload {
   types: IPokemonType[];
 }
 
-interface IPokemonType {
+export interface IPokemonType {
   slot: number;
   type: INamedAPIResource;
 }

@@ -11,7 +11,7 @@ function HomePage() {
   const getPokemons = async () => {
     try {
       const { data: pokemonPayload } = await axios.get<IPokemonsPayload>(
-        "https://pokeapi.co/api/v2/pokemon/"
+        process.env.REACT_APP_POKEMON_API_URL || ""
       );
 
       const pokemons: IPokemonPayload[] = [];

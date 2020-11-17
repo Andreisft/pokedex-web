@@ -1,17 +1,23 @@
-import React, { memo } from "react";
-import { Container, Name, Image } from "./styles";
+import React, { HTMLProps, memo } from "react";
+import { Container, Name, Image, Type } from "./styles";
 import { IPokemonPayload } from "../../interfaces/pokemon";
 
-interface IProps {
+interface IProps extends HTMLProps<HTMLDivElement> {
   pokemon: IPokemonPayload;
-  handleClick: (id: number) => void;
+  viewTypes?: boolean;
+  handleClick?: (id: number) => void;
 }
 
-function Card({ pokemon, handleClick }: IProps) {
+function Card({ pokemon, viewTypes, handleClick, className }: IProps) {
   return (
-    <Container onClick={() => handleClick(pokemon.id)}>
+    <Container
+      className={className}
+      onClick={() => handleClick && handleClick(pokemon.id)}
+    >
       <Image url={pokemon.sprites.front_default} />
       <Name>{pokemon.name}</Name>
+      {viewTypes &&
+        pokemon.types.map((e) => <Type key={e.slot}>{e.type.name}</Type>)}
     </Container>
   );
 }
