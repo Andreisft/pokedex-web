@@ -9,15 +9,23 @@ export interface IPokemonPayload {
   id: number;
   name: string;
   sprites: IPokemonSprites;
-  types: IPokemonType[];
+  types: IPokemonTypePayload[];
+  stats: IPokemonStatPayload[];
+  species: INamedAPIResource;
 }
 
-export interface IPokemonType {
+export interface IPokemonTypePayload {
   slot: number;
   type: INamedAPIResource;
 }
 
-interface IPokemonSprites {
+export interface IPokemonStatPayload {
+  stat: INamedAPIResource;
+  effort: number;
+  base_stat: number;
+}
+
+export interface IPokemonSprites {
   back_female: string;
   back_shiny_female: string;
   back_default: string;

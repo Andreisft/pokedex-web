@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 
 import { Container } from "./styles";
-import { IPokemonsPayload, IPokemonPayload } from "../../interfaces/pokemon";
+import {
+  IPokemonsPayload,
+  IPokemonPayload,
+} from "../../interfaces/pokemon";
 import PokemonList from "../../components/PokemonList";
 import axios from "axios";
 

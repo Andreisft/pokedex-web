@@ -6,34 +6,29 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 163px;
-  height: 137.06px;
+  background-color: #67a88f;
   margin: 20px;
-
-  background: #67a88f;
+  font-size: 20px;
   border-radius: 20px;
+  padding: 20px;
 
   cursor: pointer;
 `;
 
 export const Image = styled.div<{ url: string }>`
-  width: 100px;
-  height: 100px;
+  width: 251px;
+  height: 162px;
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-image: url(${(props) => props.url});
 `;
 
 export const Name = styled.p`
-  width: 68px;
-  height: 20px;
-
-  font-family: Inter;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+
   line-height: 20px;
 
   text-align: center;
@@ -41,12 +36,23 @@ export const Name = styled.p`
   color: #ffffff;
 `;
 
+export const Types = styled.div`
+  margin-top: 30px;
+`;
+
+
 export const Type = styled.div`
-  width: 100%;
-  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 251px;
+  height: 30px;
 
   background: #ffffff;
   border-radius: 15px;
 
-  text-align: center;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 400;
 `;

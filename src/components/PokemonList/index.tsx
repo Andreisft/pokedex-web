@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import { IPokemonPayload } from "../../interfaces/pokemon";
+import { IPokemonPayload} from "../../interfaces/pokemon";
 import Card from "../Card";
 import { Container } from "./styles";
 import { useHistory } from "react-router-dom";

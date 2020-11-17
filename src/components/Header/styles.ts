@@ -9,6 +9,7 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 20px;
 `;
 
 export const Logo = styled.img``;

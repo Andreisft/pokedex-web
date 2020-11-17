@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { IPokemonPayload } from "../../interfaces/pokemon";
-import { BaseStatsBox, Container, LargeCard } from "./styles";
+import {
+  BaseStatsBox,
+  Container,
+  LargeCard,
+  BaseStatsTitle,
+  ProgressBox,
+} from "./styles";
 import axios from "axios";
+import Progress from "../../components/Progress";
 
 function PokemonDetail() {
   const [loading, setLoading] = useState(false);
@@ -38,7 +45,19 @@ function PokemonDetail() {
       {!loading && pokemon !== null && (
         <>
           <LargeCard viewTypes pokemon={pokemon} />
-          <BaseStatsBox>{pokemon.name}</BaseStatsBox>
+          <BaseStatsBox>
+            <BaseStatsTitle>Base Stats</BaseStatsTitle>
+            <ProgressBox>
+              {pokemon.stats.map((e, idx) => (
+                <Progress
+                  key={idx}
+                  title={e.stat.name}
+                  completed={100}
+                  total={200}
+                />
+              ))}
+            </ProgressBox>
+          </BaseStatsBox>
         </>
       )}
     </Container>

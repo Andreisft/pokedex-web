@@ -1,5 +1,5 @@
 import React, { HTMLProps, memo } from "react";
-import { Container, Name, Image, Type } from "./styles";
+import { Container, Name, Image, Type, Types } from "./styles";
 import { IPokemonPayload } from "../../interfaces/pokemon";
 
 interface IProps extends HTMLProps<HTMLDivElement> {
@@ -16,8 +16,13 @@ function Card({ pokemon, viewTypes, handleClick, className }: IProps) {
     >
       <Image url={pokemon.sprites.front_default} />
       <Name>{pokemon.name}</Name>
-      {viewTypes &&
-        pokemon.types.map((e) => <Type key={e.slot}>{e.type.name}</Type>)}
+      {viewTypes && (
+        <Types>
+          {pokemon.types.map((e) => (
+            <Type key={e.slot}>{e.type.name}</Type>
+          ))}
+        </Types>
+      )}
     </Container>
   );
 }
